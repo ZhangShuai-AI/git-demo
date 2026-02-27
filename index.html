@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>坦克大战</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0d1117;
+        font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .panel {
+        width: min(95vw, 980px);
+        padding: 16px;
+        border-radius: 12px;
+        background: #161b22;
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+      }
+      .hud {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 16px;
+        margin-bottom: 10px;
+        color: #c9d1d9;
+        font-size: 15px;
+      }
+      canvas {
+        width: 100%;
+        border-radius: 8px;
+        background: #2f5f2f;
+        image-rendering: pixelated;
+      }
+      .tips {
+        margin-top: 10px;
+        font-size: 13px;
+        color: #8b949e;
+      }
+      .tips kbd {
+        border: 1px solid #484f58;
+        border-radius: 4px;
+        padding: 1px 5px;
+        background: #21262d;
+      }
+      button {
+        border: 1px solid #30363d;
+        background: #238636;
+        color: #fff;
+        border-radius: 6px;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="panel">
+      <div class="hud">
+        <div id="score">得分：0</div>
+        <div id="lives">生命：3</div>
+        <div id="enemies">敌军：8</div>
+        <button id="restartBtn">重新开始</button>
+      </div>
+      <canvas id="game" width="900" height="560" aria-label="坦克大战游戏画布"></canvas>
+      <div class="tips">
+        操作：<kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动，<kbd>J</kbd> 发射，清空敌军即可胜利。
+      </div>
+    </section>
+
+    <script src="game.js"></script>
+  </body>
+</html>
